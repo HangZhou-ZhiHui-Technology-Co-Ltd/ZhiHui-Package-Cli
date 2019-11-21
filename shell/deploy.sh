@@ -8,7 +8,7 @@ if [ -d "Peppa-Admin" ];then
   cd Peppa-Admin || exit
   git pull
 else
-  git clone https://gitee.com/TravisChenn/Peppa-Admin.git
+  git clone git@gitee.com:TravisChenn/Peppa-Admin.git || exit
   cd Peppa-Admin || exit
 fi
 npm i
