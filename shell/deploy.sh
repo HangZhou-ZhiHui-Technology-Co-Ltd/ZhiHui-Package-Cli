@@ -13,10 +13,10 @@ else
 fi
 npm i
 npm run build
-if [ -d "/usr/local/nginx/html/lapt-local" ];then
-  rm -rf '/usr/local/nginx/html/lapt-local'
+if [ -d "/usr/local/nginx/html/lapt-beta" ];then
+  rm -rf '/usr/local/nginx/html/lapt-beta'
 fi
 cp -aRf /root/travis/devops/ZhiHui-Package-Cli/jobs/Peppa-Admin/dist /usr/local/nginx/html
-cd /usr/local/Cellar/nginx/1.17.3_1/html || exit
-mv dist lapt-local
+cd /usr/local/nginx/html || exit
+mv dist lapt-beta
 nginx -s reload
