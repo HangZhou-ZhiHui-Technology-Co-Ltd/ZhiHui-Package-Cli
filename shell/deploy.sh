@@ -11,11 +11,12 @@ else
   cd Peppa-Admin || exit
 fi
 npm i
-npm run build
-if [ -d "/usr/local/nginx/html/lapt-beta" ];then
-  rm -rf '/usr/local/nginx/html/lapt-beta'
-fi
-cp -aRf /root/travis/devops/ZhiHui-Package-Cli/jobs/Peppa-Admin/dist /usr/local/nginx/html
-cd /usr/local/nginx/html || exit
-mv dist lapt-beta
-nginx -s reload
+pwd
+#npm run build
+#if [ -d "/usr/local/nginx/html/lapt-beta" ];then
+#  rm -rf '/usr/local/nginx/html/lapt-beta'
+#fi
+#cp -aRf /root/travis/devops/ZhiHui-Package-Cli/jobs/Peppa-Admin/dist /usr/local/nginx/html
+#cd /usr/local/nginx/html || exit
+#mv dist lapt-beta
+#nginx -s reload
