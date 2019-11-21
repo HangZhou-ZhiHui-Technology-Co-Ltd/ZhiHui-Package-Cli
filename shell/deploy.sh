@@ -1,9 +1,8 @@
 pwd
-if [ -d "jobs" ];then
-  cd jobs || exit
-else
+if [ ! -d "jobs" ];then
   mkdir jobs
 fi
+cd jobs || exit
 if [ -d "Peppa-Admin" ];then
   cd Peppa-Admin || exit
   git pull
