@@ -6,12 +6,8 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async webhook() {
-    const { ctx } = this;
     execFile('./shell/deploy.sh', (error, stdout, stderr) => {
-      if (error) {
-        ctx.logger.error(`error: ${error}`);
-        return;
-      }
+      const html = error || stderr || stdout;
       const transporter = nodemailer.createTransport({
         host: 'smtp.163.com',
         service: '163',
@@ -23,14 +19,11 @@ class HomeController extends Controller {
         },
       });
       transporter.sendMail({
-        from: '"Fred Foo 👻" <18457125447@163.com>', // sender address
-        to: 'chenqikang55@qq.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world?', // plain text body
-        html: `stdout: ${stdout}`, // html body
+        from: '"Fred Foo 👻" <18457125447@163.com>',
+        to: 'chenqikang55@qq.com',
+        subject: '构建通知',
+        html,
       });
-      ctx.logger.info(`stdout: ${stdout}`);
-      ctx.logger.error(`stderr: ${stderr}`);
     });
   }
 }
