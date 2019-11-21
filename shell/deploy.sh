@@ -1,4 +1,9 @@
-cd jobs || exit
+pwd
+if [ -d "jobs" ];then
+  cd jobs || exit
+else
+  mkdir jobs
+fi
 if [ -d "Peppa-Admin" ];then
   cd Peppa-Admin || exit
   git pull
