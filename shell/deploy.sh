@@ -10,8 +10,8 @@ else
   git clone git@gitee.com:TravisChenn/Peppa-Admin.git || exit
   cd Peppa-Admin || exit
 fi
-cnpm i
-cnpm run build
+npm i
+npm run build
 if [ -d "/usr/local/nginx/html/lapt-beta" ];then
   rm -rf '/usr/local/nginx/html/lapt-beta'
 fi
